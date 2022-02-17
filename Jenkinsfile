@@ -1,6 +1,6 @@
 
 pipeline { 
-    agent any
+    agent {label 'linux'}
 
     environment {
         DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
@@ -10,7 +10,6 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        agent {label 'linux'}
         stage('Build & Test') { 
             agent {
                 docker { image 'mcr.microsoft.com/dotnet/sdk:6.0' }
