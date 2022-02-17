@@ -9,12 +9,12 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-    stages {
-        node('linux'){
+    stages {        
         stage('Build & Test') { 
             
             agent {
                 docker { image 'mcr.microsoft.com/dotnet/sdk:6.0' }
+                label {'linux'}
             }
             stages {
                 stage('Build') {
@@ -33,7 +33,6 @@ pipeline {
                     }
                 }
             }
-        }
         }
     }
 }
