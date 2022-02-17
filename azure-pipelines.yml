@@ -15,12 +15,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: UseDotNet@2
-    displayName: 'Use .NET6'
-    inputs:
-        packageType: 'sdk'
-        version: '6.0.x'
-        includePreviewVersions: true
-
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: $(solution)
+    arguments: ''
+  displayName: 'Build projects'
 
   
