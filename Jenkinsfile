@@ -10,8 +10,9 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
+        node('linux'){
         stage('Build & Test') { 
-            node('linux'){
+            
             agent {
                 docker { image 'mcr.microsoft.com/dotnet/sdk:6.0' }
             }
