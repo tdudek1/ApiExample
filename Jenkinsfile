@@ -11,6 +11,7 @@ pipeline {
     }
     stages {
         stage('Build & Test') { 
+            node('linux'){
             agent {
                 docker { image 'mcr.microsoft.com/dotnet/sdk:6.0' }
             }
@@ -31,6 +32,7 @@ pipeline {
                     }
                 }
             }
+        }
         }
     }
 }
