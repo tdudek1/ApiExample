@@ -1,6 +1,6 @@
 
 pipeline { 
-        agent {label 'linux'}  
+    agent any
 
     environment {
         DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
