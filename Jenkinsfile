@@ -12,8 +12,10 @@ pipeline {
     stages {        
         stage('Build & Test') { 
             agent {
-                docker image 'mcr.microsoft.com/dotnet/sdk:6.0'
-                label 'linux'
+                docker {
+                    image 'mcr.microsoft.com/dotnet/sdk:6.0' 
+                    label 'linux'
+                }
             }
             stages {
                 stage('Build') {
