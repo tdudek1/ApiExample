@@ -22,9 +22,5 @@ steps:
     version: '6.0.x'
     includePreviewVersions: true
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: $(solution)
-  displayName: 'Build Solution'
+
   
