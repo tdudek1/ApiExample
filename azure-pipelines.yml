@@ -21,5 +21,11 @@ steps:
     projects: $(solution)
     arguments: ''
   displayName: 'Build projects'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: $(solution)
+    arguments: ''
+  displayName: 'Build projects'
 
   
